@@ -1,26 +1,26 @@
 // If you do not know what this is for, do not touch it. You will never need to use it :)
 
-let javadoc = require('../ref/javadoc.json');
+let javadoc = require('./javadoc.json');
 const fs = require('fs');
 
-fs.mkdir('./t', (e) => {})
+// fs.mkdir('./t', (e) => {})
 
 let masteriteration = 0;
 for (section in javadoc) {
   masteriteration++
   console.log(javadoc[section].title)
   let dir = javadoc[section].title.split('.').join('-')
-  fs.mkdirSync(`./t/${dir}`)
+  fs.mkdirSync(`../${dir}`)
 
   fs.writeFileSync(
-    `./t/${dir}/${dir}.md`, 
+    `../${dir}/${dir}.md`, 
     `---
 layout: default
 title: ${javadoc[section].title.replace('com.qualcomm.', 'qc.').replace('org.firstinspires.ftc.', 'ftc.')}
 nav_order: ${masteriteration}
 has_children: true
 ---
-# ${javadoc[section].title}
+# \`${javadoc[section].title}\`
 ---
 **Further descriptions have not yet been written for this package**. Here is the link to the [official Javadoc](${javadoc[section].javadoc})
     `
@@ -33,9 +33,9 @@ has_children: true
   for (subsection in section_.packages) {
     iteration++
     console.log(`--${section_.title}/${subsection}`)
-    fs.mkdirSync(`./t/${dir}/${subsection}`)
+    fs.mkdirSync(`../${dir}/${subsection}`)
     fs.writeFileSync(
-      `./t/${dir}/${subsection}/${subsection}.md`,
+      `../${dir}/${subsection}/${subsection}.md`,
       `---
 layout: default
 title: ${subsection}
@@ -50,9 +50,9 @@ has_children: true
     for (package in section_.packages[subsection]) {
       subiteration++
       let package_ = section_.packages[subsection];
-      let fname = package_[package].title.split('.').join('-')
+      let fname = package_[package].title
       fs.writeFileSync(
-        `./t/${dir}/${subsection}/${fname}.md`,
+        `../${dir}/${subsection}/${fname.split('.').join('-')}.md`,
         `---
 layout: default
 title: ${fname}
@@ -61,6 +61,13 @@ grand_parent: ${javadoc[section].title.replace('com.qualcomm.', 'qc.').replace('
 nav_order: ${subiteration}
 ---
 # \`${fname}\`
+{: .no_toc}
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 ---
 **This page has not yet been written**. Here is the link to the [official JavaDoc](${package_[package].javadoc})
         `

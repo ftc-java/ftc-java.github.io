@@ -84,12 +84,14 @@ We are using [just-the-docs](https://github.com/pmarsceill/just-the-docs), a doc
 
 You are expected to keep everything neat, clean, and appropriate on your documentation. For the most part, I am flexible when checking PR's. The largest things of issue are low-quality content, foul language, or targeted comments. 
 
-## Contributors
-
-[@jackcrane](https://github.com/jackcrane)
+**Refer to the [telemetry](/org-firstinspires-ftc-robotcore-external/interfaces/Telemetry.md) page as a good example of how to write a page**
 
 ## ToDo List
 
 - [ ] Start everything. At the time of writing (August 10), nothing has been written
 
 If you are looking for something to tackle, find a page and get to work! There is a lot of content to be written. I have included a link to the official javadoc document on each page as reference. You could also check the github issues for more technical issues to take care of.
+
+## Contributors
+
+[@jackcrane](https://github.com/jackcrane)
