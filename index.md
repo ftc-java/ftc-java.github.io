@@ -11,7 +11,7 @@ permalink: /
 Welcome to the unofficial documentation page for FIRST Tech Challenge's Java APIs!
 {: .fs-6 .fw-300 }
 
-[Get Started](/getting-started){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Contribute](/contributing){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 
